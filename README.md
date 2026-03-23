@@ -7,12 +7,13 @@ Police Service KSI dataset (2006–2020).
 ---
 
 ## Project Status
-🟡 Phase 1 — Data Exploration (In Progress)
+🟡 Phase 1 — Data Exploration (Completed)
+
 
 ---
 
 ## What Has Been Done
-- Loaded and explored 18,957 records across 54 features
+1.  Loaded and explored 18,957 records across 54 features
 - Identified `ACCLASS` as the binary target (Fatal=1, Non-Fatal=0)
 - Full missing value analysis — 384,930 nulls across 39 columns
 - Established drop/impute/encode strategy for all affected columns
@@ -20,6 +21,12 @@ Police Service KSI dataset (2006–2020).
   significant class imbalance (Fatal = 14.1% only)
 
 ---
+2. Visulizations using seaborn 
+- seaborn corr heatmap for numerics
+- Visualizing the imbalanced classes
+- visualizing essential features wiht the target column
+- Getting insight about columns need to be dropped
+
 
 ## Environment Setup
 
