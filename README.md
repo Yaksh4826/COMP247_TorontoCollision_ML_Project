@@ -27,6 +27,15 @@ Police Service KSI dataset (2006–2020).
 - visualizing essential features wiht the target column
 - Getting insight about columns need to be dropped
 
+3. Data transformation and feature selection
+- Drop low-importance or redundant columns based on correlation heatmap and domain logic
+- Impute missing values (median for numeric, mode for categorical, or custom strategy)
+- Encode categorical features (one-hot, label encoding, or target encoding as appropriate)
+- Scale numeric features when needed (StandardScaler/MinMaxScaler)
+- Evaluate candidate features with univariate stats and model-based feature importance
+- Choose final feature set for modeling with a focus on predictive power and interpretability
+
+
 
 ## Environment Setup
 
