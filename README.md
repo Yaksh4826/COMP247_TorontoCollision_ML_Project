@@ -8,7 +8,8 @@ Police Service KSI dataset (2006–2023).
 
 ## Project Status
 🟡 Phase 1 — Data Exploration (Completed)
-⚪ Phase 2 — Modelling & Deployment (Upcoming)
+🟡 Phase 2 — Data Transformation (In Progress)
+⚪ Phase 3 — Modelling & Deployment (Upcoming)
 
 ---
 
@@ -29,6 +30,17 @@ Police Service KSI dataset (2006–2023).
 - Class distribution plot highlighting target imbalance
 - Countplots for key categorical features vs target column
 - Missing value heatmap to support drop decisions
+
+### 3. Data Transformation (Yaksh & Aayan)
+- Dropped all columns exceeding 40% missing value threshold
+- Dropped identifier and leaky columns (ACCNUM, FATAL_NO, INJURY etc.)
+- Handled binary flag columns — SPEEDING, ALCOHOL, REDLIGHT, AG_DRIV
+  converted to 0/1 indicators (missing = No)
+- Aayan handled imputation of remaining low-missing columns using mode
+- Encoded all categorical columns using OrdinalEncoder
+- Cleaned target column — removed Property Damage Only rows and
+  single missing ACCLASS row
+- Final dataset shape: 18,938 rows x 22 features, zero nulls remaining
 
 ---
 
