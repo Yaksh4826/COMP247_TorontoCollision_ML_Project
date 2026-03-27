@@ -37,7 +37,7 @@ Police Service KSI dataset (2006–2023).
 
 ---
 
-### 3. Data Transformation (Yaksh & Aayan)
+### 3. Data Transformation (Yaksh & Ayan)
 - Dropped columns with more than 40% missing values
 - Removed unnecessary and leakage columns:
   - ACCNUM, FATAL_NO, INJURY, etc.
@@ -55,33 +55,37 @@ Police Service KSI dataset (2006–2023).
 
 ---
 
-### 4. Feature Selection & Model Preparation (Mohammednaeem)
-- Applied Chi-Square feature selection
-  - Retained features with p-value < 0.05
-- Created final feature set for modelling
+### 4. Feature Selection & Model Preparation (Mohammednaeem & Raihan)
+- Applied Chi-Square feature selection  
+  - Retained features with p-value < 0.05  
+- Created final feature set for modelling  
 
-- Defined:
-  - `X` -> selected features
-  - `y` -> target (`ACCLASS`)
+- Defined:  
+  - `X` → selected features  
+  - `y` → target (`ACCLASS`)  
 
-- Handled issue with missing target values:
-  - Dropped rows where `ACCLASS` was null before training
+- Handled issue with missing target values:  
+  - Dropped rows where `ACCLASS` was null before splitting  
 
-- Split dataset:
-  - 80% training / 20% testing
-  - Used stratified split to preserve class distribution
+- Split dataset:  
+  - 80% training / 20% testing  
+  - Used stratified split to preserve class distribution  
 
-- Built preprocessing pipeline:
-  - **SimpleImputer** → handles any remaining missing values
-  - **OrdinalEncoder** → converts categorical data to numeric
-  - **StandardScaler** → scales numerical features
+- Built preprocessing pipeline:  
+  - **SimpleImputer** → handles remaining missing values  
+  - **OrdinalEncoder** → converts categorical data to numeric  
+  - **StandardScaler** → scales numerical features  
 
-- Combined preprocessing with model using Pipeline
+- Applied preprocessing separately:  
+  - Fitted preprocessing pipeline on training data  
+  - Transformed both training and test datasets using the same pipeline  
 
-- Trained model:
-  - RandomForestClassifier
+- Applied class balancing:  
+  - Used **SMOTE** on the preprocessed training data only  
+  - Generated a balanced training dataset (`X_resampled`, `y_resampled`)  
+  - Left test data unchanged to ensure fair evaluation in later stages    
 
-- Generated predictions on test data
+- Generated a balanced training dataset using `fit_resample()`  
 
 ---
 
