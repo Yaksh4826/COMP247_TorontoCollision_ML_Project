@@ -3,7 +3,8 @@ import pandas as pd
 import joblib
 
 app = Flask(__name__)
-
+from flask_cors import CORS
+CORS(app)
 # Load preprocessing pipeline
 preprocessing_pipeline = joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\pipeline\pipeline.pkl")
 
@@ -11,8 +12,8 @@ preprocessing_pipeline = joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_T
 models = {
     "svm": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\svm_model.pkl"),
     "decision_tree": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\decision_tree_alex.pkl"),
-#      "neural_network": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\models\neural_network_ksi_model.pkl"),
-#    "random_forest": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\models\random_forest_ksi_model.pkl")
+      "neural_network": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\neural_network_ksi_model.pkl"),
+    "random_forest": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\random_forest_ksi_model.pkl")
 }
 
 #22 features
@@ -77,6 +78,7 @@ def predict(model_name):
             confidence = float(model.predict_proba(X_processed)[0][1])
 
         return jsonify({
+            "success":True,
             "model": model_name,
             "prediction": int(prediction),
             "confidence": confidence
