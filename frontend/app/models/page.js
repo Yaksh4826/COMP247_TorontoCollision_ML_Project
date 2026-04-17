@@ -55,6 +55,18 @@ const ALL_MODELS = [
     tags: ["MLP", "Deep Learning"],
     best: false,
   },
+  {
+    key: "logistic_regression",
+    name: "Logistic Regression",
+    short: "LR",
+    color: "#0891b2",
+    accuracy: 68.19,
+    f1: 0.31,
+    auc: null,
+    note: "Baseline — Cell 99 (tuned: 68.14%)",
+    tags: ["Linear", "Baseline"],
+    best: false,
+  },
 ];
 
 function AccuracyBar({ value, color }) {

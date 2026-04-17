@@ -13,7 +13,8 @@ models = {
     "svm": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\svm_model.pkl"),
     "decision_tree": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\decision_tree_alex.pkl"),
       "neural_network": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\neural_network_ksi_model.pkl"),
-    "random_forest": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\random_forest_ksi_model.pkl")
+    "random_forest": joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\random_forest_ksi_model.pkl"),
+    "logistic_regression":joblib.load(r"C:\Users\yaksh\OneDrive\Desktop\COMP247_Toronto_collison_Project\model\logistic_regression_ksi_model.pkl")
 }
 
 #22 features

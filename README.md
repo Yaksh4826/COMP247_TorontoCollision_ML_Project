@@ -24,6 +24,7 @@
 | Decision Tree | 82.92% | 0.45 | Interpretable, fast inference |
 | SVM (RBF Kernel) | AUC 83.6% | — | Accuracy output not saved in notebook |
 | Neural Network (MLP) | — | — | Output not saved in notebook |
+| Logistic Regression | 68.19% | 0.31 | Baseline model — lowest performer |
 
 All models trained on Toronto Police KSI dataset (2006–2024), 22 features, with SMOTE class balancing.
 
